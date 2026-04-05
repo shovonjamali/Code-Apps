@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denmark Weather Check</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero-panel">
+      <div>
+        <p class="eyebrow">Weather in Denmark</p>
+        <h1>City temperature lookup</h1>
+        <p class="intro">Choose a Danish city and see the current temperature, weather icon, and sky description.</p>
+      </div>
+      <div class="brand-badge">Copenhagen</div>
+    </header>
+
+    <main class="content-panel">
+      <section class="controls-card">
+        <label for="citySelect">Select a city</label>
+        <div class="select-wrapper">
+          <select id="citySelect" aria-label="Select Danish city">
+            <option value="">Choose a city</option>
+            <option value="Copenhagen">Copenhagen</option>
+            <option value="Aarhus">Aarhus</option>
+            <option value="Odense">Odense</option>
+            <option value="Aalborg">Aalborg</option>
+            <option value="Esbjerg">Esbjerg</option>
+            <option value="Randers">Randers</option>
+            <option value="Kolding">Kolding</option>
+            <option value="Horsens">Horsens</option>
+            <option value="Vejle">Vejle</option>
+          </select>
+        </div>
+        <button id="fetchWeatherButton" class="primary-button">Show weather</button>
+        <p class="hint">Tip: use the dropdown to switch cities quickly.</p>
+      </section>
+
+      <section class="weather-card glass-card" aria-live="polite">
+        <div class="card-header">
+          <span class="card-title">Current weather</span>
+          <span class="status-badge" id="statusBadge">Waiting for a city</span>
+        </div>
+
+        <div class="weather-state" id="weatherState">
+          <div class="weather-icon" id="weatherIcon">☁️</div>
+          <div class="weather-details">
+            <p class="temperature" id="temperature">--°C</p>
+            <p class="description" id="description">Please select a Danish city above.</p>
+            <p class="city-name" id="cityName">Denmark</p>
+          </div>
+        </div>
+
+        <div class="meta-row">
+          <div>
+            <span class="meta-label">Feels like</span>
+            <span id="feelsLike">--°C</span>
+          </div>
+          <div>
+            <span class="meta-label">Humidity</span>
+            <span id="humidity">--%</span>
+          </div>
+          <div>
+            <span class="meta-label">Wind</span>
+            <span id="windSpeed">-- m/s</span>
+          </div>
+        </div>
+
+        <p class="error-message" id="errorMessage"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
